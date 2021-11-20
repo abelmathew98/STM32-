@@ -1,0 +1,127 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.36.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Abel Varghese, Student, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.36.0.0
+Toolchain Path:  D:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.16
+Assembler:       Armasm.exe V6.16
+Linker/Locator:  ArmLink.exe V6.16
+Library Manager: ArmAr.exe V6.16
+Hex Converter:   FromElf.exe V6.16
+CPU DLL:         SARMCM3.DLL V5.36.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
+Dialog DLL:      TCM.DLL V1.53.0.0
+ 
+<h2>Project:</h2>
+D:\Keil_v5\Projects\RLP - broken down\I2C\I2C.uvprojx
+Project File Date:  11/08/2021
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.16', folder: 'D:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+assembling startup_stm32f446xx.s...
+compiling RccConfig.c...
+compiling Delay.c...
+compiling system_stm32f4xx.c...
+main.c(290): warning: implicit conversion loses integer precision: 'unsigned int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+        uint8_t temp = I2C1->SR1 | I2C1->SR2;  // read SR1 and SR2 to clear the ADDR bit
+                ~~~~   ~~~~~~~~~~^~~~~~~~~~~
+main.c(290): warning: unused variable 'temp' [-Wunused-variable]
+        uint8_t temp = I2C1->SR1 | I2C1->SR2;  // read SR1 and SR2 to clear the ADDR bit
+                ^
+main.c(347): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                I2C1->CR1 &= ~(1<<10);  // clear the ACK bit 
+                          ~~ ^~~~~~~~
+main.c(348): warning: implicit conversion loses integer precision: 'unsigned int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+                uint8_t temp = I2C1->SR1 | I2C1->SR2;  // read SR1 and SR2 to clear the ADDR bit.... EV6 condition
+                        ~~~~   ~~~~~~~~~~^~~~~~~~~~~
+main.c(355): warning: implicit conversion loses integer precision: 'volatile uint32_t' (aka 'volatile unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+                buffer[size-remaining] = I2C1->DR;  // Read the data from the DATA REGISTER
+                                       ~ ~~~~~~^~
+main.c(348): warning: unused variable 'temp' [-Wunused-variable]
+                uint8_t temp = I2C1->SR1 | I2C1->SR2;  // read SR1 and SR2 to clear the ADDR bit.... EV6 condition
+                        ^
+main.c(367): warning: implicit conversion loses integer precision: 'unsigned int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+                uint8_t temp = I2C1->SR1 | I2C1->SR2;  // read SR1 and SR2 to clear the ADDR bit
+                        ~~~~   ~~~~~~~~~~^~~~~~~~~~~
+main.c(375): warning: implicit conversion loses integer precision: 'volatile uint32_t' (aka 'volatile unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+                        buffer[size-remaining] = I2C1->DR;  // copy the data into the buffer                    
+                                               ~ ~~~~~~^~
+main.c(385): warning: implicit conversion loses integer precision: 'volatile uint32_t' (aka 'volatile unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+                buffer[size-remaining] = I2C1->DR;
+                                       ~ ~~~~~~^~
+main.c(388): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                I2C1->CR1 &= ~(1<<10);  // clear the ACK bit 
+                          ~~ ^~~~~~~~
+main.c(397): warning: implicit conversion loses integer precision: 'volatile uint32_t' (aka 'volatile unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+                buffer[size-remaining] = I2C1->DR;  // copy the data into the buffer
+                                       ~ ~~~~~~^~
+main.c(367): warning: unused variable 'temp' [-Wunused-variable]
+                uint8_t temp = I2C1->SR1 | I2C1->SR2;  // read SR1 and SR2 to clear the ADDR bit
+                        ^
+main.c(402): warning: no previous prototype for function 'MPU_Read' [-Wmissing-prototypes]
+void MPU_Read (uint8_t Address, uint8_t Reg, uint8_t *buffer, uint8_t size)
+     ^
+main.c(402): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void MPU_Read (uint8_t Address, uint8_t Reg, uint8_t *buffer, uint8_t size)
+^
+static 
+main.c(447): warning: no newline at end of file [-Wnewline-eof]
+}
+ ^
+main.c(7): warning: unused variable 'HTU21D_ADDR' [-Wunused-const-variable]
+static const uint8_t HTU21D_ADDR = 0x40 << 1;
+                     ^
+main.c(8): warning: unused variable 'REG_TEMP' [-Wunused-const-variable]
+static const uint8_t REG_TEMP = 0x00;
+                     ^
+main.c(9): warning: unused variable 'REG_TEMP_HTU' [-Wunused-const-variable]
+static const uint8_t REG_TEMP_HTU = 0xE3;
+                     ^
+17 warnings generated.
+compiling main.c...
+linking...
+Program Size: Code=1088 RO-data=468 RW-data=0 ZI-data=1632  
+".\Objects\I2C.axf" - 0 Error(s), 17 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.8.0.pack
+                ARM.CMSIS.5.8.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.5.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.15.0.pack
+                Keil.STM32F4xx_DFP.2.15.0
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 2.6.3
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_Target_1
+  D:\Users\abelm\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include
+  D:\Users\abelm\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.5.0
+
+   * Component: Keil::Device:Startup:2.6.3
+      Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
+      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
+      Source file:   MDK\Device\Source\ARM\STM32F446xx_OPT.s
+      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f446xx.s
+      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
+Build Time Elapsed:  00:00:03
+</pre>
+</body>
+</html>
